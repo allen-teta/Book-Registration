@@ -3,7 +3,7 @@ const add=(newbooks)=>{
     newbooks.id=booksDatabase.length+1;
     booksDatabase.push(newbooks);
     console.log("book added");
-}
+};
 const update=(id,key,value)=>{
     var exist=booksDatabase.find(element=>element.id==id);
     if (!exist) {
@@ -12,7 +12,9 @@ const update=(id,key,value)=>{
         exist[key]=value;
         console.log("updated/n");
         console.log(exist);
-    }
+    };
+
+}
 //update many
 const manyUpdate=(id,object)=>{
     var exists=booksDatabase.find(element=>element.id===id);
@@ -26,8 +28,13 @@ const manyUpdate=(id,object)=>{
         console.log(exists);
             } 
      }  
-    }
-    const remove=(id)=>{
+    };
+   
+const display=()=>{
+            console.log(booksDatabase);
+        } 
+
+ const remove=(id)=>{
         var exists=booksDatabase.find(element=>element.id===id);
         if (!exists) {
           console.log("book not found\n");
@@ -39,15 +46,8 @@ const manyUpdate=(id,object)=>{
           console.log(remaining);
       
         } 
-        const display=()=>{
-            console.log(booksDatabase);
-        } 
-      }
-}
-
-
-
-
+        
+      };
 
 
 
@@ -56,5 +56,5 @@ const manyUpdate=(id,object)=>{
 
 
 module.exports={
-    add,update,manyUpdate,display,
+    add,update,manyUpdate,remove,display,
 }
